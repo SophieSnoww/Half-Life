@@ -8,7 +8,7 @@
     --font-size: 1;
 }
 
-@media screen and (max-width: 1200) {
+@media screen and (max-width: 1200px) {
     .BigClock {
         --font-size: 0.5;
     }
