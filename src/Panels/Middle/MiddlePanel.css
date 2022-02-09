@@ -5,6 +5,20 @@
     border-right: 3px solid var(--accent);
     
     flex-direction: column;
+    
+    --font-scaling: 1;
+}
+
+@media screen and (max-width: 1500px) {
+    .TopPanel {
+        --font-scaling: 0.75;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .TopPanel {
+        --font-scaling: 0.5;
+    }
 }
 
 .middle-panel {
