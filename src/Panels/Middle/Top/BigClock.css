@@ -8,9 +8,9 @@
     --font-size: 1;
 }
 
-@media (max-width: 1000) {
+@media (max-width: 1200) {
     .BigClock {
-        --font-size: 0.5ch;
+        --font-size: 0.5;
     }
 }
 
