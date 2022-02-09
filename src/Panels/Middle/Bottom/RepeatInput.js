@@ -51,6 +51,22 @@ class RepeatInput extends React.Component {
             style.opacity = 0;
         }
         
+        let max = 1;
+        
+        switch (this.repeatEveryValues[this.state.repeatEveryIndex]) {
+            case ("hour"):
+                max = 24;
+                break;
+            case ("day"):
+                max = 6;
+                break;
+            case ("week"):
+                max = 4;
+                break;
+            case ("month"):
+                max = 12;
+        }
+        
         return (
             <div className="RepeatInput" style={style}>
                 Repeat every

@@ -14,8 +14,8 @@
     border: 0;
     
     border-bottom: 1px solid var(--accent);
-    margin: 0px 10px;
-    width: 50px;
+    margin: 0px 0.5ch;
+    width: 3ch;
     max-width: min-content;
     color: var(--accent);
     font-family: major-mono;
@@ -24,20 +24,20 @@
 }
 
 .relative-input-input.text {
-    width: 300px;
+    width: 20ch;
 }
 
 .relative-input-repeat-toggle {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 5px;
 }
 
 .add-relative-input-button {
     width: 25%;
-    margin-top: 20px;
-    padding: 5px 20px;
+    margin-top: 2vh;
+    padding: .5ch 5%;
     border: 1px solid var(--accent);
     cursor: pointer;
 }
