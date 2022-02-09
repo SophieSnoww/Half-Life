@@ -1,0 +1,23 @@
+.TimeToggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+    margin-top: -60px;
+    width: 75%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--accent);
+}
+
+.time-toggle-button {
+    cursor: pointer;
+    flex: 0 0 50%;
+}
+
+.time-toggle-button.disabled {
+    filter: brightness(0.5);
+}
+
+.time-toggle-button.disabled:hover {
+    filter: brightness(0.75);
+}

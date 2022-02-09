@@ -1,0 +1,6 @@
+.repeat-input-every {
+    cursor: pointer;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 1px;
+    user-select: none;
+}

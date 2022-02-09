@@ -1,0 +1,4 @@
+.TopPanel {
+    border-bottom: 1px solid var(--accent);
+    flex: 0 0 40%;
+}

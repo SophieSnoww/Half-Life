@@ -1,0 +1,23 @@
+.InputTypeToggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50%;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+}
+
+.input-type-toggle-button {
+    flex: 0 0 50%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.input-type-toggle-button.disabled {
+    filter: brightness(0.5);
+}
+
+.input-type-toggle-button.disabled:hover {
+    filter: brightness(0.75);
+}
