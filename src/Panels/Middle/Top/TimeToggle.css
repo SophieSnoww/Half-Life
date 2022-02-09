@@ -7,6 +7,8 @@
     width: 75%;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--accent);
+    
+    font-size: calc(var(--font-scaling) * 1ch);
 }
 
 .time-toggle-button {
