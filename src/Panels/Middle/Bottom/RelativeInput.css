@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
-    font-size: 1.5ch;
+    font-size: calc(var(--font-scaling) * 1.5ch);
 }
 
 .relative-input-input {
@@ -19,7 +19,7 @@
     max-width: min-content;
     color: var(--accent);
     font-family: major-mono;
-    font-size: 1.5ch;
+    font-size: calc(var(--font-scaling) * 1.5ch);
     text-align: center;
 }
 
