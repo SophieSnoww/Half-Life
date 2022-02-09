@@ -4,10 +4,18 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
+    --font-size: 1ch;
+}
+
+@media (max-width: 1000) {
+    .BigClock {
+        --font-size: 0.5ch;
+    }
 }
 
 .clock-header {
-    font-size: 2ch;
+    font-size: calc(var(--font-size) * 2ch);
     border-bottom: 1px solid var(--accent);
     padding-bottom: 20px;
     margin-bottom: 10px;
@@ -16,9 +24,9 @@
 
 .actual-clock {
     font-weight: bold;
-    font-size: 6ch;
+    font-size: calc(var(--font-size) * 6ch);
 }
 
 .clock-subtext {
-    font-size: 3ch;
+    font-size: calc(var(--font-size) * 3ch);
 }
