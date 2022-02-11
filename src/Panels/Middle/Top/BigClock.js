@@ -45,7 +45,7 @@ class BigClock extends React.Component {
         let dateString;
         
         if (this.state.isCountdown) {
-            if (typeof this.props.events[0] !== undefined) {
+            if (this.props.events.length !== 0) {
                 this.setState({
                     isCompleted: false
                 });
@@ -125,7 +125,7 @@ class BigClock extends React.Component {
         let headerText = "It is currently:";
         
         if (this.state.isCountdown) {
-            if (typeof this.props.events[0] == undefined) {
+            if (this.props.events.length == 0) {
                 headerText = ``;
             }
             else {
@@ -137,7 +137,7 @@ class BigClock extends React.Component {
             <div className="BigClock">
                 <TimeToggle toggleCountdown={(value) => this.toggleCountdown(value)} isCountdown={this.state.isCountdown} />
                 <div className="clock-header">{headerText}</div>
-                <div className={`actual-clock ${this.state.isCompleted ? "completed" : ""}`}>{(this.state.isCompleted) ? ("FINISHED") : (this.state.time)}</div>
+                <div className={`actual-clock ${(this.state.isCompleted && this.state.isCountdown) ? "completed" : ""}`}>{(this.state.isCompleted && this.state.isCountdown) ? ("FINISHED") : (this.state.time)}</div>
                 <div className="clock-subtext">{this.state.date}</div>
             </div>
         );
