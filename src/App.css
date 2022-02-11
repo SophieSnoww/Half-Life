@@ -41,3 +41,9 @@
     align-items: center;
     justify-content: center;
 }
+
+.panel-title {
+    font-size: calc(var(--font-scaling) * 2ch);
+    padding-bottom: calc(var(--font-scaling) * 0.25ch);
+    border-bottom: 1px solid var(--accent);
+}

@@ -1,18 +1,13 @@
-import React from 'react';
+import EventsList from './EventsList';
 import './RightPanel.css';
 
-class RightPanel extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    
-    render() {
-        return (
-            <div className="RightPanel panel side">
-                Nothing Yet!
-            </div>
-        );
-    }
+function RightPanel(props) {
+    return (
+        <div className="RightPanel panel side">
+            <div className="panel-title">Events</div>
+            <EventsList events={props.events} deleteEvent={props.deleteEvent} />
+        </div>
+    );
 }
 
 export default RightPanel;

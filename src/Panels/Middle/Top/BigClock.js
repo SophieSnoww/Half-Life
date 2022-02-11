@@ -8,7 +8,7 @@ class BigClock extends React.Component {
         
         this.state = {
             time: "00:00:00.000",
-            date: "1970/01/01",
+            date: "01970/01/01",
             isCountdown: false
         }
     }
@@ -28,6 +28,10 @@ class BigClock extends React.Component {
         let minute = date.getMinutes();
         let second = date.getSeconds();
         let millis = date.getMilliseconds();
+        
+        if (year < 10000) {
+            year = `0${year}`;
+        }
         
         if (month < 10) {
             month = `0${month}`;

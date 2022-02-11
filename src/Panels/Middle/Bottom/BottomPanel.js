@@ -24,8 +24,8 @@ class BottomPanel extends React.Component {
             <div className="BottomPanel middle-panel">
                 <InputTypeToggle changeInputType={(type) => this.changeInputType(type)} inputType={this.state.inputType} />
                 { this.state.inputType === "relative"
-                    ? <RelativeInput />
-                    : <ExactInput />
+                    ? <RelativeInput addEvent={this.props.addEvent} />
+                    : <ExactInput addEvent={this.props.addEvent} />
                 }
             </div>
         );

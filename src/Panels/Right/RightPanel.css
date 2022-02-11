@@ -1,0 +1,6 @@
+.RightPanel {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 30px 0px;
+    box-sizing: border-box;
+}
