@@ -107,7 +107,7 @@ class App extends React.Component {
             <div className="App">
                 <img className="main-logo" src="logo.png" alt="Half-Life logo" />
                 <LeftPanel />
-                <MiddlePanel events={this.state.events} addEvent={(state) => this.addEvent(state)} />
+                <MiddlePanel events={this.state.events} addEvent={(state) => this.addEvent(state)} deleteEvent={() => this.deleteEvent(0)} />
                 <RightPanel events={this.state.events} deleteEvent={(index) => this.deleteEvent(index)} />
             </div>
         );

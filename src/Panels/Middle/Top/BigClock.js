@@ -6,10 +6,13 @@ class BigClock extends React.Component {
     constructor(props) {
         super(props);
         
+        let isCountdown = JSON.parse(localStorage.getItem("isCountdown"));
+        
         this.state = {
             time: "00:00:00.000",
             date: "01970/01/01",
-            isCountdown: false
+            isCompleted: false,
+            isCountdown
         }
     }
     
@@ -17,17 +20,65 @@ class BigClock extends React.Component {
         setInterval(() => this.clockUpdate(), 11);
     }
     
+    toggleCountdown(value) {
+        this.setState({
+            isCountdown: value
+        }, () => {
+            localStorage.setItem("isCountdown", `${value}`)
+        });
+    }
+    
     clockUpdate() {
-        let date = new Date();
+        let now = new Date();
+        let remainingTime;
         
-        let year = date.getFullYear();
-        let month = date.getMonth() + 1;
-        let day = date.getDate();
+        let year;
+        let month;
+        let day;
         
-        let hour = date.getHours();
-        let minute = date.getMinutes();
-        let second = date.getSeconds();
-        let millis = date.getMilliseconds();
+        let hour;
+        let minute;
+        let second;
+        let millis;
+        
+        let timeString;
+        let dateString;
+        
+        if (this.state.isCountdown) {
+            if (typeof this.props.events[0] !== undefined) {
+                this.setState({
+                    isCompleted: false
+                });
+                
+                remainingTime = this.props.events[0].dateMS - now;
+                
+                hour = Math.floor(remainingTime / (60 * 60 * 1000));
+                minute = Math.floor((remainingTime % (60 * 60 * 1000)) / (60 * 1000));
+                second = Math.floor((remainingTime % (60 * 1000)) / (1000));
+                millis = (remainingTime % (1000));
+                
+                if (remainingTime < 0) {
+                    this.props.deleteEvent();
+                }
+            }
+            else {
+                this.setState({
+                    isCompleted: true
+                });
+                
+                remainingTime = "";
+            }
+        }
+        else {
+            year = now.getFullYear();
+            month = now.getMonth() + 1;
+            day = now.getDate();
+            
+            hour = now.getHours();
+            minute = now.getMinutes();
+            second = now.getSeconds();
+            millis = now.getMilliseconds();
+        }
         
         if (year < 10000) {
             year = `0${year}`;
@@ -60,19 +111,33 @@ class BigClock extends React.Component {
         else if (millis < 100) {
             millis = `0${millis}`;
         }
+            
+        timeString = `${hour}:${minute}:${second}.${millis}`;
+        dateString = `${(this.state.isCountdown) ? `${remainingTime}` : `${year}/${month}/${day}`}`;
         
         this.setState({
-            time: `${hour}:${minute}:${second}.${millis}`,
-            date: `${year}/${month}/${day}`
+            time: timeString,
+            date: dateString
         });
     }
     
     render() {
+        let headerText = "It is currently:";
+        
+        if (this.state.isCountdown) {
+            if (typeof this.props.events[0] == undefined) {
+                headerText = ``;
+            }
+            else {
+                headerText = `Time until ${this.props.events[0].name}:`;
+            }
+        }
+        
         return (
             <div className="BigClock">
-                <TimeToggle />
-                <div className="clock-header">It is currently:</div>
-                <div className="actual-clock">{this.state.time}</div>
+                <TimeToggle toggleCountdown={(value) => this.toggleCountdown(value)} isCountdown={this.state.isCountdown} />
+                <div className="clock-header">{headerText}</div>
+                <div className={`actual-clock ${this.state.isCompleted ? "completed" : ""}`}>{(this.state.isCompleted) ? ("FINISHED") : (this.state.time)}</div>
                 <div className="clock-subtext">{this.state.date}</div>
             </div>
         );

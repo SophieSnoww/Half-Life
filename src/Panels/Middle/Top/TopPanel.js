@@ -2,18 +2,12 @@ import React from 'react';
 import BigClock from './BigClock';
 import './TopPanel.css';
 
-class TopPanel extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    
-    render() {
-        return (
-            <div className="TopPanel middle-panel">
-                <BigClock />
-            </div>
-        );
-    }
+function TopPanel(props) {
+    return (
+        <div className="TopPanel middle-panel">
+            <BigClock events={props.events} deleteEvent={props.deleteEvent} />
+        </div>
+    );
 }
 
 export default TopPanel;

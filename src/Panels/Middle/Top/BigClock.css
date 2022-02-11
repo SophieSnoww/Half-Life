@@ -22,3 +22,7 @@
 .clock-subtext {
     font-size: calc(var(--font-scaling) * 3ch);
 }
+
+.completed {
+    color: var(--no);
+}
