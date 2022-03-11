@@ -1,0 +1,48 @@
+.ExactInput {
+    width: 75%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    font-size: calc(var(--font-scaling) * 1.5ch);
+}
+
+.relative-input-input {
+    background: none;
+    outline: 0;
+    border: 0;
+    
+    border-bottom: 1px solid var(--accent);
+    margin: 0px 0.5ch;
+    width: 3ch;
+    max-width: min-content;
+    color: var(--accent);
+    font-family: major-mono;
+    font-size: calc(var(--font-scaling) * 1.5ch);
+    text-align: center;
+}
+
+.relative-input-input.text {
+    width: 20ch;
+}
+
+.relative-input-repeat-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.add-relative-input-button {
+    width: 25%;
+    margin-top: 2vh;
+    padding: .5ch 5%;
+    border: 1px solid var(--accent);
+    cursor: pointer;
+}
+
+.add-relative-input-button:hover {
+    background-color: var(--accent);
+    color: var(--bg-1);
+}
