@@ -1,0 +1,49 @@
+.App {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border: 1px solid var(--accent);
+    
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-logo {
+    border-radius: 50%;
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 50px;
+    height: 50px;
+    transition: 300s ease;
+    padding: 15px;
+    border: 1px solid var(--accent);
+    background-color: var(--bg-1);
+}
+
+.main-logo:hover {
+    transform: rotate(-360deg);
+}
+
+.panel {
+    height: 100%;
+}
+
+.panel.side {
+    flex: 0 0 25%;
+}
+
+.panel,
+.middle-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.panel-title {
+    font-size: calc(var(--font-scaling) * 2ch);
+    padding-bottom: calc(var(--font-scaling) * 0.25ch);
+    border-bottom: 1px solid var(--accent);
+}

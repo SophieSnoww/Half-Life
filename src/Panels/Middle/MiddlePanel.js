@@ -1,13 +1,13 @@
-import './MiddlePanel.css';
-
-import TopPanel from './Top/TopPanel';
-import BottomPanel from './Bottom/BottomPanel';
+import '../Panels.css';
+import EventCreation from './EventCreation';
 
 function MiddlePanel (props) {
   return (
-    <div className='MiddlePanel panel'>
-      <TopPanel events={props.events} deleteEvent={props.deleteEvent} />
-      <BottomPanel addEvent={props.addEvent} />
+    <div className='panel middle-panel'>
+      <div className='time'>
+        {props.time.format('hh:mm:ss.SSS')}
+      </div>
+      <EventCreation />
     </div>
   );
 }

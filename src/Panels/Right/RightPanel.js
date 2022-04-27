@@ -1,11 +1,9 @@
-import EventsList from './EventsList';
-import './RightPanel.css';
+import '../Panels.css';
 
 function RightPanel (props) {
   return (
-    <div className='RightPanel panel side'>
-      <div className='panel-title'>Events</div>
-      <EventsList events={props.events} deleteEvent={props.deleteEvent} />
+    <div className='panel right-panel'>
+      Nothing here yet!
     </div>
   );
 }

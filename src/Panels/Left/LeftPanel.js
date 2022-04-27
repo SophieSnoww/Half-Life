@@ -1,18 +1,11 @@
-import React from 'react';
-import './LeftPanel.css';
+import '../Panels.css';
 
-class LeftPanel extends React.Component {
-  constructor (props) {
-    super(props);
-  }
-
-  render () {
-    return (
-      <div className='LeftPanel panel side'>
-        Nothing Yet!
-      </div>
-    );
-  }
+function LeftPanel (props) {
+  return (
+    <div className='panel left-panel'>
+      Nothing here yet!
+    </div>
+  );
 }
 
 export default LeftPanel;
