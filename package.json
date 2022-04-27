@@ -39,5 +39,10 @@
   },
   "devDependencies": {
     "semistandard": "^16.0.1"
+  },
+  "semistandard": {
+    "globals": [
+      "localStorage"
+    ]
   }
 }
