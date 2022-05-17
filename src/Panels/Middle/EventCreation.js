@@ -12,9 +12,36 @@ function EventCreation (props) {
         <Link to='/exact' className={['/exact'].includes(location.pathname) ? '' : 'dim'}>Exact</Link>
       </div>
       <Routes>
-        <Route path='' element={<RelativeEvents />} />
-        <Route path='/relative' element={<RelativeEvents />} />
-        <Route path='/exact' element={<ExactEvents />} />
+        <Route
+          path=''
+          element={
+            <RelativeEvents
+              time={props.time}
+              events={props.events}
+              setEvents={props.setEvents}
+            />
+          }
+        />
+        <Route
+          path='/relative'
+          element={
+            <RelativeEvents
+              time={props.time}
+              events={props.events}
+              setEvents={props.setEvents}
+            />
+          }
+        />
+        <Route
+          path='/exact'
+          element={
+            <ExactEvents
+              time={props.time}
+              events={props.events}
+              setEvents={props.setEvents}
+            />
+          }
+        />
       </Routes>
     </div>
   );

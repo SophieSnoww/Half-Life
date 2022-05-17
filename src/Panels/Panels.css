@@ -21,18 +21,40 @@
   flex: 1 0 30%;
 }
 
-.time {
+.left-panel {
+  gap: 20px;
+}
+
+.event-container {
+  width: 90%;
+}
+
+.event-name {
+  font-weight: bold;
+  border-bottom: 1px solid var(--accent);
+}
+
+.time-container {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 
   border-bottom: 1px solid var(--accent);
   width: 90%;
 
   flex: 0 0 40%;
 
-  font-size: 2em;
   font-weight: bold;
+}
+
+.time {
+  font-size: 2.5em;
+}
+
+.date {
+  font-size: 1.5em;
+  filter: brightness(0.6);
 }
 
 .event-creation {
@@ -60,5 +82,55 @@
   padding: 10px;
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.relative-time-input-container {
+  display: flex;
+  align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 10px;
+  width: 70%;
+}
+
+.relative-time-input-container > input[type=number] {
+  width: 40px;
+  text-align: center;
+}
+
+.relative-time-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.exact-event-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.exact-event-container > input[type=number] {
+  width: 100px;
+}
+
+.exact-event-button {
+  background-color: var(--accent);
+  color: var(--bg-1);
+  padding: 5px 40px;
+  border: 1px solid var(--bg-1);
+  cursor: pointer;
+}
+
+.exact-event-button:hover {
+  background-color: var(--bg-1);
+  color: var(--accent);
+  border: 1px solid var(--accent);
 }

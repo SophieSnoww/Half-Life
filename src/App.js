@@ -7,6 +7,7 @@ import RightPanel from './Panels/Right/RightPanel';
 
 function App (props) {
   const [time, setTime] = useState(moment());
+  const [events, setEvents] = useState([]);
 
   useEffect(() => {
     setInterval(() => {
@@ -16,9 +17,8 @@ function App (props) {
 
   return (
     <div className='app'>
-      {/* {time.format('h:mm:ss.SSS a')} */}
-      <LeftPanel />
-      <MiddlePanel time={time} />
+      <LeftPanel events={events} setEvents={setEvents} />
+      <MiddlePanel time={time} events={events} setEvents={setEvents} />
       <RightPanel />
     </div>
   );
